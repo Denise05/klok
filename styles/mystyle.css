@@ -1,0 +1,284 @@
+ /*algemeen body*/
+body {
+  text-align: center;
+  font-family: "Andale Mono";
+  font-weight: bold;
+  font-size: 1em;
+  color: white;
+  margin: 0; 
+}
+
+/* Indeling container telefoon */
+.container{
+        display: grid;
+        min-height: 300px;
+        grid-template-columns: 1fr;
+        grid-template-rows: 20px 300px 105px 170px;
+        grid-template-areas:
+          "header"
+          "klok"
+          "bergen"
+          "footer"
+        ;
+}
+
+/* header */
+header {
+  grid-area: header;
+}
+
+/* klok */
+div#clock {
+  grid-area: klok;
+  margin-top: 100px;
+  font-size: 2em;
+}
+
+/* opmaak en indeling footer */
+footer {
+  grid-area: footer;
+  background-color: #5A5A5B;
+  font-size:0.8em;
+  padding-top: 140px;
+}
+
+/* grid-area bergen */
+div#bergen {
+  grid-area: bergen;
+}
+
+/* opmaak en afmetingen afbeelding van bergen*/
+figure#afbeeldingbergen {
+  width: 100%;
+  z-index: 2;
+  margin-left: 0;
+  height: 50px;
+  position: absolute;
+}
+
+/* opmaak en afmetingen wolk 1 bovenaan */
+figure#wolk {
+  position: absolute;
+  width: 50px;
+  margin-left: 80px;
+  margin-top: 40px;
+  animation: 1000ms pulsate infinite alternate ease-in-out;
+}
+
+/* opmaak en afmetingen wolk 2 midden */
+figure#wolk2 {
+  position: absolute;
+  z-index: 2;
+  width: 50px;
+  margin-left: 240px;
+  margin-top: 210px;
+  animation: 1000ms pulsate infinite alternate ease-in-out;
+}
+
+/* opmaak en afmetingen wolk 3 onderaan */
+figure#wolk3 {
+  position: absolute;
+  width: 50px;
+  margin-left: 30px;
+  margin-top: 270px;
+  animation: 1000ms pulsate infinite alternate ease-in-out;
+}
+
+/* animatie wolken*/
+@keyframes pulsate {
+  0% { 
+    top: -3px; 
+  }
+  100% { 
+    top: 10px;
+  }
+}
+
+/* opmaak en afmetingen raket */
+figure#raket {
+  position: absolute;
+  width: 50px;
+  margin-left: 240px;
+  animation: raket 10s forwards;
+  animation-iteration-count: infinite;
+}
+
+/* animatie raket*/
+@keyframes raket {
+  0% { 
+   transform: translateY(290px);
+  }
+
+  100% {
+    transform: translateY(-140px);
+  }
+}
+
+
+/* Breakpoint naar Ipad */
+@media only screen and (min-width: 768px){
+  .container{
+      grid-template-rows: 120px 340px 315px 60px;
+      grid-template-areas:
+        "header header"
+        "klok klok"
+        "bergen bergen"
+        "footer footer"
+        ; 
+  }
+
+  /* tekstgrootte */
+  body {
+    font-size: 1.6em;
+  }
+
+  /* padding footer smaller */
+  footer{
+    padding: 20px;
+  }
+
+  /* opmaak en afmetingen wolk 1 bovenaan */
+  figure#wolk {
+    width: 130px;
+    margin-left: 260px;
+    margin-top: 60px;
+  }
+
+  /* opmaak en afmetingen wolk 2 midden */
+  figure#wolk2 {
+    width: 130px;
+    margin-left: 780px;
+    margin-top: 280px;
+  }
+
+  /* opmaak en afmetingen wolk 3 onderaan */
+  figure#wolk3 {
+    width: 130px;
+    margin-left: 70px;
+    margin-top: 360px;
+  }
+
+  /* opmaak en afmetingen raket */
+  figure#raket {
+    width: 110px;
+    margin-left: 740px;
+  }
+
+  /* animatie raket*/
+  @keyframes raket {
+    0% { 
+     transform: translateY(500px);
+    }
+
+    100% {
+      transform: translateY(-290px);
+    }
+  }
+
+}
+
+
+  /* Breakpoint naar laptop klein */
+@media only screen and (min-width: 1280px){
+  .container{
+      grid-template-rows: 120px 280px 390px 60px;
+      grid-template-areas:
+        "header header"
+        "klok klok"
+        "bergen bergen"
+        "footer footer"
+        ; 
+  }
+
+  /* opmaak en afmetingen wolk 1 bovenaan */
+  figure#wolk {
+    margin-left: 370px;
+    margin-top: 65px;
+  }
+
+  /* opmaak en afmetingen wolk 2 midden */
+  figure#wolk2 {
+    margin-left: 1000px;
+    margin-top: 200px;
+  }
+
+  /* opmaak en afmetingen wolk 3 onderaan */
+  figure#wolk3 {
+    margin-left: 75px;
+    margin-top: 280px;
+  }
+
+  /* opmaak en afmetingen raket */
+  figure#raket {
+    width: 120px;
+    margin-left: 870px;
+  }
+
+  /* animatie raket*/
+  @keyframes raket {
+    0% { 
+     transform: translateY(470px);
+    }
+
+    100% {
+      transform: translateY(-320px);
+    }
+  }
+
+}
+
+
+/* Breakpoint naar laptop groot */
+@media only screen and (min-width: 1365px){
+  .container{
+      grid-template-rows: 120px 230px 415px 60px;
+      grid-template-areas:
+        "header header"
+        "klok klok"
+        "bergen bergen"
+        "footer footer"
+        ; 
+  } 
+
+  /* klok margin boven */
+  div#clock {
+    margin-top: 75px;
+  }
+
+  /* opmaak en afmetingen wolk 1 bovenaan */
+  figure#wolk {
+    margin-left: 370px;
+    margin-top: 65px;
+  }
+
+  /* opmaak en afmetingen wolk 2 midden */
+  figure#wolk2 {
+    margin-left: 1100px;
+    margin-top: 180px;
+  }
+
+  /* opmaak en afmetingen wolk 3 onderaan */
+  figure#wolk3 {
+    margin-left: 75px;
+    margin-top: 250px;
+  }
+
+  /* opmaak en afmetingen raket */
+  figure#raket {
+    margin-left: 950px;
+  }
+
+  /* animatie raket*/
+  @keyframes raket {
+    0% { 
+     transform: translateY(445px);
+    }
+
+    100% {
+      transform: translateY(-420px);
+    }
+  }
+
+} 
+  
+
